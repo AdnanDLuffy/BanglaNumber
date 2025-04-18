@@ -1,8 +1,8 @@
 let num = "";
-let banglaNumber = (নাম্বার) => {
-    let নাম্বারমালা = নাম্বার.split("");
+function banglaNumber (number) {
+    let numberArray = number.split("");
 
-    নাম্বারমালা.forEach(a => {
+    numberArray.forEach(a => {
         if (a ==="১") {
             num += "1";
         }
@@ -36,9 +36,28 @@ let banglaNumber = (নাম্বার) => {
         else if ( a ==="." ){
             num += ".";
         }
+        else if ( a ==="+" ){
+            num += "+";
+        }
+        else if ( a ==="-" ){
+            num += "-";
+        }
+        else if ( a ==="/" ){
+            num += "/";
+        }
+        else if ( a ==="*" ){
+            num += "*";
+        }
+        else {
+            console.log("Valid Input...")
+        }
     });
     
-    return Number(num);
+    
+    return Number(eval(num));
 }
+
+
+console.log(banglaNumber("১২৩২১+২৩২৩"))
 
 module.exports = banglaNumber;
